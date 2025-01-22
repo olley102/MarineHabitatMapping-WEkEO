@@ -1,0 +1,96 @@
+<graph id="Graph">
+  <version>1.0</version>
+  <node id="Read">
+    <operator>Read</operator>
+    <sources/>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <useAdvancedOptions>false</useAdvancedOptions>
+      <file>$inputimg</file>
+      <copyMetadata>true</copyMetadata>
+      <bandNames/>
+      <pixelRegion>0,0,10980,10980</pixelRegion>
+      <maskNames/>
+    </parameters>
+  </node>
+  <node id="Subset">
+    <operator>Subset</operator>
+    <sources>
+      <sourceProduct refid="Read"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <sourceBands>B1,B2,B3,B4,B5,B6,B7,B8,B8A,B9,B10,B11,B12</sourceBands>
+      <tiePointGrids/>
+      <region>0,0,0,0</region>
+      <referenceBand/>
+      <geoRegion>$polygon</geoRegion>
+      <subSamplingX>1</subSamplingX>
+      <subSamplingY>1</subSamplingY>
+      <fullSwath>false</fullSwath>
+      <copyMetadata>true</copyMetadata>
+    </parameters>
+  </node>
+  <node id="Resample">
+    <operator>Resample</operator>
+    <sources>
+      <sourceProduct refid="Subset"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <referenceBand>B2</referenceBand>
+      <targetWidth/>
+      <targetHeight/>
+      <targetResolution/>
+      <upsampling>Nearest</upsampling>
+      <downsampling>Mean</downsampling>
+      <flagDownsampling>First</flagDownsampling>
+      <resamplingPreset/>
+      <bandResamplings/>
+      <resampleOnPyramidLevels>true</resampleOnPyramidLevels>
+    </parameters>
+  </node>
+  <node id="C2RCC">
+    <operator>c2rcc.msi</operator>
+    <sources>
+      <sourceProduct refid="Subset"/>
+    </sources>
+    <parameters>
+      <validPixelExpression>B8 &gt; 0 &amp;&amp; B8 &lt; 0.1</validPixelExpression>
+      <salinity>35.0</salinity>
+      <temperature>15.0</temperature>
+      <ozone>330.0</ozone>
+      <press>1000.0</press>
+      <elevation>0.0</elevation>
+      <TSMfac>1.06</TSMfac>
+      <TSMexp>0.942</TSMexp>
+      <CHLexp>1.04</CHLexp>
+      <CHLfac>21.0</CHLfac>
+      <thresholdRtosaOOS>0.05</thresholdRtosaOOS>
+      <thresholdAcReflecOos>0.1</thresholdAcReflecOos>
+      <thresholdCloudTDown865>0.955</thresholdCloudTDown865>
+      <netSet>C2X-COMPLEX-Nets</netSet>
+      <outputAsRrs>true</outputAsRrs>
+      <deriveRwFromPathAndTransmittance>false</deriveRwFromPathAndTransmittance>
+      <useEcmwfAuxData>false</useEcmwfAuxData>
+      <outputRtoa>false</outputRtoa>
+      <outputRtosaGc>false</outputRtosaGc>
+      <outputRtosaGcAann>false</outputRtosaGcAann>
+      <outputRpath>false</outputRpath>
+      <outputTdown>false</outputTdown>
+      <outputTup>false</outputTup>
+      <outputAcReflectance>true</outputAcReflectance>
+      <outputRhown>true</outputRhown>
+      <outputOos>false</outputOos>
+      <outputKd>true</outputKd>
+      <outputUncertainties>true</outputUncertainties>
+    </parameters>
+  </node>
+  <node id="Write">
+    <operator>Write</operator>
+    <sources>
+      <sourceProduct refid="C2RCC"/>
+    </sources>
+    <parameters class="com.bc.ceres.binding.dom.XppDomElement">
+      <file>$output</file>
+      <formatName>BEAM-DIMAP</formatName>
+    </parameters>
+  </node>
+</graph>
