@@ -18,7 +18,7 @@
       <sourceProduct refid="Read"/>
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
-      <sourceBands>B1,B2,B3,B4,B5,B6,B7,B8,B8A,B9,B10,B11,B12</sourceBands>
+      <sourceBands/>
       <tiePointGrids/>
       <region>0,0,0,0</region>
       <referenceBand/>
@@ -50,7 +50,7 @@
   <node id="C2RCC">
     <operator>c2rcc.msi</operator>
     <sources>
-      <sourceProduct refid="Subset"/>
+      <sourceProduct refid="Resample"/>
     </sources>
     <parameters>
       <validPixelExpression>B8 &gt; 0 &amp;&amp; B8 &lt; 0.1</validPixelExpression>
@@ -90,7 +90,7 @@
     </sources>
     <parameters class="com.bc.ceres.binding.dom.XppDomElement">
       <file>$output</file>
-      <formatName>BEAM-DIMAP</formatName>
+      <formatName>NetCDF4-BEAM</formatName>
     </parameters>
   </node>
 </graph>
