@@ -6,22 +6,22 @@
     <Histograms>
       <HistItem>
         <HistMin>1</HistMin>
-        <HistMax>9</HistMax>
-        <BucketCount>9</BucketCount>
+        <HistMax>28</HistMax>
+        <BucketCount>28</BucketCount>
         <IncludeOutOfRange>1</IncludeOutOfRange>
         <Approximate>0</Approximate>
-        <HistCounts>19873|2246|5580|4754|441|3630|290|2219|7710</HistCounts>
+        <HistCounts>290|0|0|2243|0|0|0|0|0|5579|3627|0|0|19885|439|0|4752|0|2224|0|0|0|0|0|0|0|0|7706</HistCounts>
       </HistItem>
     </Histograms>
     <Metadata>
-      <MDI key="STATISTICS_COUNT">46743.000000</MDI>
-      <MDI key="STATISTICS_MAXIMUM">9</MDI>
-      <MDI key="STATISTICS_MEAN">3.7070363476884</MDI>
+      <MDI key="STATISTICS_COUNT">46745.000000</MDI>
+      <MDI key="STATISTICS_MAXIMUM">28</MDI>
+      <MDI key="STATISTICS_MEAN">15.589517595465</MDI>
       <MDI key="STATISTICS_MEDIAN">nan</MDI>
       <MDI key="STATISTICS_MINIMUM">1</MDI>
       <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
       <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
-      <MDI key="STATISTICS_STDDEV">3.0514611107585</MDI>
+      <MDI key="STATISTICS_STDDEV">6.3524601089411</MDI>
     </Metadata>
   </PAMRasterBand>
 </PAMDataset>

@@ -5,23 +5,23 @@
   <PAMRasterBand band="1">
     <Histograms>
       <HistItem>
-        <HistMin>1</HistMin>
-        <HistMax>9</HistMax>
-        <BucketCount>9</BucketCount>
+        <HistMin>4</HistMin>
+        <HistMax>28</HistMax>
+        <BucketCount>25</BucketCount>
         <IncludeOutOfRange>1</IncludeOutOfRange>
         <Approximate>0</Approximate>
-        <HistCounts>14185|279|23488|2102|4124|15|35|1698|289</HistCounts>
+        <HistCounts>14172|0|0|0|289|0|2102|0|0|4151|23475|0|1696|279|35|0|0|0|0|0|0|0|0|0|15</HistCounts>
       </HistItem>
     </Histograms>
     <Metadata>
-      <MDI key="STATISTICS_COUNT">46215.000000</MDI>
-      <MDI key="STATISTICS_MAXIMUM">9</MDI>
-      <MDI key="STATISTICS_MEAN">2.829276209023</MDI>
+      <MDI key="STATISTICS_COUNT">46214.000000</MDI>
+      <MDI key="STATISTICS_MAXIMUM">28</MDI>
+      <MDI key="STATISTICS_MEAN">10.723200761674</MDI>
       <MDI key="STATISTICS_MEDIAN">nan</MDI>
-      <MDI key="STATISTICS_MINIMUM">1</MDI>
+      <MDI key="STATISTICS_MINIMUM">4</MDI>
       <MDI key="STATISTICS_SKIPFACTORX">1</MDI>
       <MDI key="STATISTICS_SKIPFACTORY">1</MDI>
-      <MDI key="STATISTICS_STDDEV">1.6630714556438</MDI>
+      <MDI key="STATISTICS_STDDEV">4.6096242061764</MDI>
     </Metadata>
   </PAMRasterBand>
 </PAMDataset>
